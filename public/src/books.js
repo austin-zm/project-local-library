@@ -2,7 +2,7 @@ function findAuthorById(authors, id) {
   //compairing two values 
   for (let i = 0; i < authors.length; i++){
     if (id === authors[i].id){
-      return authors[i]
+      return authors[i];
     }
   }
 }
@@ -11,7 +11,7 @@ function findBookById(books, id) {
   // compairing two values
   for (let i = 0; i < books.length; i++){
     if (id === books[i].id){
-      return books[i]
+      return books[i];
     }
   }
 }
@@ -19,30 +19,30 @@ function findBookById(books, id) {
 function partitionBooksByBorrowedStatus(books) {
   // seperate borrowed books into 2 arrays depending on the first var in borrows array
   let borrowedBooks = books.filter(book=>{
-    return book.borrows[0].returned == false
+    return book.borrows[0].returned == false;
   })
   let returnedBooks = books.filter (book =>{
-    return book.borrows[0].returned == true
+    return book.borrows[0].returned == true;
   })
-  return [borrowedBooks, returnedBooks]
+  return [borrowedBooks, returnedBooks];
 }
 
 function getBorrowersForBook(book, accounts) {
   // empty array to push into
-  let result = []
-  let borrows = book.borrows
+  let result = [];
+  let borrows = book.borrows;
   for (let recIndex in borrows){ 
-    let record = borrows[recIndex]
+    let record = borrows[recIndex];
     for (let index in accounts){
-      let account = accounts[index]
+      let account = accounts[index];
     if (record.id === account.id){
-      let tempAcct = account
-      tempAcct["returned"] = record.returned
-      result.push(tempAcct)
+      let tempAcct = account;
+      tempAcct["returned"] = record.returned;
+      result.push(tempAcct);
     }
     }
 }
-  return result.slice(0,10)
+  return result.slice(0,10);
 }
 
 module.exports = {
