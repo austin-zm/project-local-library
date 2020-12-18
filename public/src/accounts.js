@@ -31,11 +31,12 @@ function numberOfBorrows(account, books) {
   //then loop through the borrows arr and use counter
   let counter = 0;
   for (let i = 0; i < books.length; i++){
-    for (let j = 0; j < books[i].borrows.length; j++);
+    for (let j = 0; j < books[i].borrows.length; j++){
     if (books[i].borrows[j].id === account.id){
       counter += 1;
     }
   }
+}
   return counter;
 }
 
